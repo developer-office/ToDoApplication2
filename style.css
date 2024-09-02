@@ -1,0 +1,79 @@
+/* Basic reset */
+body, html{
+    margin: 0;    
+    overflow: hidden;
+}
+.navBar{
+    background-color: skyblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    height: 50px; /* Set explicit height to match the gap in sidebar */
+    margin: 0;
+}
+
+/* Base style for the text */
+.gradient-text {
+    font-size: 25px;
+    background: linear-gradient(90deg, #000, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-size 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Hover effect with gradient and shading */
+.gradient-text:hover {
+    background: linear-gradient(90deg, #ff7a18, #af002d, #319197, #3d00a0, #ffeb3b);
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s ease infinite;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* key frames*/
+@keyframes gradientAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/* Sliding Bar */
+.sideBar{
+    background-color: #b04d77;
+    width: 200px;
+    height: calc(100vh - 50px); /* Full height minus the navbar height */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    border-right: 3px solid #333; /* Adding a border for effect */
+    display:  flex;
+    flex-direction: column; /* stack items vertically */
+    gap: 15px; /* gap between each item */
+    overflow-y: hidden;
+}
+
+/* sidebar items */
+.sideBar-item{
+    color: white;
+    text-decoration: none; /*remove underline from links */
+    font-size: 18px;
+    /* padding:  10px 15px; /* padding around each item */
+    /*border-radius: 5px;
+    transition: background-color 0.3s ease; /* smooth background color transition */
+}
+
+/* Hover effect on items */
+.sideBar-item:hover{
+    color: #ffd700;
+    text-decoration: underline;
+}
